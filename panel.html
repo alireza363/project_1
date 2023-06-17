@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootcamp</title>
+    <link rel="icon" href="image/favicon5.ico">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- -----------------------------------------------------------------------------------
+    div : یک عنصر بلاک با کاربرد عمومی است که محتوای فلوی صفحه را می توان
+         بمنظور تفکیک ، جداسازی و نیز استایل دهی بخش های مختلف در آن قرار داد 
+----------------------------------------------------------------------------------------
+    در اینجا هدف فقط تفکیک برای دادن استایل مورد دلخواه به آن بوده 
+    که از این تگ استفاده شده
+    ------------------------------------------------------------------------------------
+    container : این کلاس عرض صفحه پنجره مرورگر کاربر را در محدوده مورد نظر تعیین و در وسط 
+    عرض پنجره مرورگر قرار میدهد که برای رسپانسیو صفحه کافیست استایل آن را تغییر دهیم 
+------------------------------------------------------------------------------------ -->
+    <div class="container">
+
+        <!-- ------------------------------------------
+            پس زمینه محدوده مورد نظر را تعیین می کند
+        ------------------------------------------- --> 
+        <div class="background">
+
+            <!-- -------------------------------------------------------------------------
+                pg_massenger : محتوای اصلی پنجره صفحه پیام رسانی که خود شامل دو بخش است 
+                در این کلاس معرفی شده است
+            -------------------------------------------------------------------------- -->
+            <div class="pg_massenger">
+
+                <!-- --------------------------------------------------------------
+                    section : یک بخش مستقل عمومی از یک سند را نشان می دهد که 
+                    عنصر معنایی خاص تری برای نشان دادن آن ندارد و 
+                    باید همیشه یک عنوان داشته باشند
+
+                    pg_box : کلاس دارای یک استایل خاص با حاشیه های گرد و پس زمینه مربوطه
+                    که به بخش های مورد نظر اعمال می شود
+
+                    pg_msg_side : استایل و تفکیک بخش حاشیه پنجره پیام رسان حاوی 
+                    لیست مخاطبان را معین می کند
+                --------------------------------------------------------------- -->
+                <section class="pg_box pg_msg_side">
+
+                    <!-- ------------------------------------------------------------
+                        header_side : تعیین استایل عنوان بخش حاشیه پنجره پیام رسان
+                    ------------------------------------------------------------- -->
+                    <div class="header_side">
+                        
+                        <!-- ---------------------------------------------------------------
+                            h3 : عنصر نشان دهنده عنوان یک بخش با سطح سه
+                            
+                            title_side : استایل عنوان بخش حاشیه پنجره پیام رسان
+
+                            padding_box : کلاسی برای تعیین یک پدینگ ثابت برای بخش های مورد نظر
+                        --------------------------------------------------------------- -->
+                         <h3 class="title_side padding_box">پیام رسان فراوین</h3>
+
+                        <!-- ---------------------------------------------------------------
+                            icon_header : کلاسی برای تفکیک و استایل دادن بخش نگهدارنده آیکون های 
+                            مورد نیاز 
+                        --------------------------------------------------------------- -->
+                        <div class="icon_header padding_box">
+
+                            <!-- ------------------------------------------------------------------
+                            i.fa : fontawsome تگ تعیین شده برای استفاده از استایل فونت های سایت
+
+                            fa-plus : fontawsome کلاس ایجاد آیکن پلاس از سایت 
+                            fa-refresh : fontawsome کلاس ایجاد آیکن رفرش از سایت 
+                            ------------------------------------------------------------------- -->
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                            <i class="fa fa-refresh" aria-hidden="true"></i>
+                        </div>
+                    </div>
+
+                    <!-- ----------------------------------------------------------
+                        list_contact : برای تفکیک و استایل بخش حاوی لیست مخاطبین
+                    ----------------------------------------------------------- -->
+                    <div class="list_contact">
+
+                        <!-- -----------------------------------------------
+                            item_contact : استایل هر مخاطب را تعیین می کند
+                        ------------------------------------------------ -->
+                        <div class="item_contact padding_box">
+
+                            <!-- -----------------------------------------------------
+                                img : این عنصر یک تصویر را در سند جاسازی می کند
+
+                                user_icon : استایل مربوط به آیکن کاربر را تعریف می کند
+                            ------------------------------------------------------ -->
+                            <img class="user_icon" src="image/user_icon.png" alt="user_icon">
+                            علی رضایی
+                        </div>
+
+
+                        <div class="item_contact padding_box">
+                            <img class="user_icon" src="image/user_icon.png" alt="user_icon">
+                            بابا
+                        </div>
+                        <div class="item_contact padding_box">
+                            <img class="user_icon" src="image/user_icon.png" alt="user_icon">
+                            مرضیه
+                        </div>
+
+                        <!-- ------------------------------------------------------------------
+                            item_active : مخاطبی که انتخاب شده است این کلاس را دریافت می کند
+                        ------------------------------------------------------------------- -->
+                        <div class="item_contact padding_box item_active">
+                            <img class="user_icon" src="image/user_icon.png" alt="user_icon">
+                            احمد کریمی
+                        </div>
+
+
+                        <div class="item_contact padding_box">
+                            <img class="user_icon" src="image/user_icon.png" alt="user_icon">
+                            مدیر مالی شرکت
+                        </div>
+                        <div class="item_contact padding_box">
+                            <img class="user_icon" src="image/user_icon.png" alt="user_icon">
+                            رضا حسینی
+                        </div>
+                        <div class="item_contact padding_box">
+                            <img class="user_icon" src="image/user_icon.png" alt="user_icon">
+                            بهنام هاشم نیا
+                        </div>
+                    </div>
+                </section> <!-- end of pg_msg_side -->
+
+                <!-- ------------------------------------------------------------------------
+                    pg_msg_content : محتوای اصلی پیام های مخاطب انتخاب شده را در برمیگیرد
+                ------------------------------------------------------------------------- -->
+                <section class="pg_msg_content">
+
+                    <!-- ---------------------------------------------------------------
+                        header_contact : تعیین استایل عنوان بخش محتوای پیامهای پنجره پیام رسان
+                    ---------------------------------------------------------------- -->
+                    <header class="pg_box header_contact padding_box">
+                        <div>
+                            <img class="user_icon" src="image/user_icon.png" alt="user_icon">
+
+                            <!-- 
+                                
+                             -->
+                            <span class="name_contact">احمد کریمی</span>
+                        </div>
+        
+                        <div class="fx_icon_header padding_box">
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                            <i class="fa fa-refresh" aria-hidden="true"></i>
+                        </div>
+                    </header>
+                    <div class="show_msg">
+        
+                        <div class="msg_box">
+                            <div class="send padding_box">
+                                <p>
+                                    سلام، خوبی؟
+                                </p>
+                                <span class="time">3 فروردین - 11:38</span>
+                            </div>
+                        </div>
+        
+                        <div class="msg_box">
+                            <div class="send padding_box">
+                                <p>
+                                    پروژه رو تا کجا رسوندی؟
+                                </p>
+                                <span class="time">3 فروردین - 11:39</span>
+                            </div>
+                        </div>
+        
+                        <div class="msg_box">
+                            <div class="receive padding_box">
+                                <p>
+                                    سلام، ممنون.
+                                </p>
+                                <p>
+                                    خوب پیش می رم و آخراشه..
+                                </p>
+                                <span class="time">4 فروردین - 12:10</span>
+                            </div>
+                        </div>             
+                    </div>
+        
+                    <div class="pg_box msg_content padding_box">
+                        <input type="text" placeholder="پیام ...">
+                        <img src="image/send.png" alt="ارسال پیام">
+                    </div>
+                </section> <!-- end of pg_msg_content -->
+    
+            </div> <!-- end of pg_massanger -->
+
+        </div> <!-- end of background -->
+    </div> <!-- end of container -->
+
+    <script>
+
+    </script>
+</body>
+</html>
