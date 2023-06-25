@@ -348,3 +348,16 @@ add user page style
      top: 15px;
      font-size: 1.2em
  }
+
+ /* 
+ **
+
+ */
+ input.success {
+    border-color: #09c372;
+    outline: none;
+}
+
+input.error {
+    border-color: #f2070e;
+}

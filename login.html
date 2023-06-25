@@ -76,7 +76,7 @@
                                 در برخی از دستگاه های دارای صفحه کلید پویا نمایش می دهد
                             -------------------------------------------------------------------------- -->
                             <input type="tel" id="login_mob" maxlength="11" minlength="11" pattern="[0]{1}[0-9]{10}"
-                            placeholder="*********09" required>
+                            placeholder="*********09" onblur="checkTel()" required>
                         </div>
                         <div class="row_input">
                             <label for="login_pass">رمز عبور :</label>
@@ -85,7 +85,7 @@
                                 type password : یک فیلد متنی تک خطی که ورودی آن قابل مشاهده نیست
                                 و اگر سایت امن نباشد به کاربر هشدار می دهد
                             --------------------------------------------------------------------------- -->
-                            <input type="password" id="login_pass" minlength="8" required>
+                            <input type="password" id="login_pass" onblur="checkPass()" minlength="8" required>
                         </div>
 
                         <!-- -----------------------------------
@@ -99,7 +99,7 @@
 
                                 in_btn : استایل دکمه را تعیین می کند
                             ---------------------------------------------- -->
-                            <input type="submit" class="in_btn" value="ورود">
+                            <input type="submit" class="in_btn" value="ورود" onclick="checklogin()">
 
                             <!-- -----------------------------------------------------------------------------------------
                                 p : یک عنصر بلاک که پاراگراف را نشان می دهد
@@ -128,7 +128,31 @@
     </div><!-- end of container -->
 
     <script>
-        
+        function checklogin() {
+            const login = document.getElementById('login_mob');
+            
+        }
+
+        function checkPass() {
+
+            const password = myForm.elements.password.value.trim();
+            const passwordError = document.querySelector('#password + .errorMessage');
+            
+            const passwordInput = document.getElementById('login_pass');
+            if(password === ''){
+                passwordError.textContent = 'Password is required.';
+                passwordInput.parentNode.classList.add('error');
+                passwordInput.parentNode.classList.remove('success');
+            } else if (password.length < 8) {
+                passwordError.textContent = 'Password is expected to be 8 characters.';
+                passwordInput.parentNode.classList.add('error');
+                passwordInput.parentNode.classList.remove('success');
+            } else {
+                passwordError.textContent = '';
+                passwordInput.parentNode.classList.add('success');
+                passwordInput.parentNode.classList.remove('error');
+            }
+        }    
     </script>
 </body>
 </html>
