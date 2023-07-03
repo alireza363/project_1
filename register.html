@@ -37,10 +37,10 @@
                     header : یک عنصر معنایی است که نشاندهنده محتوای مقدماتی صفحه است
                     h1 : عنصر معنایی نگهدارنده عنوان اصلی محتوای صفحه
 
-                    کلاس header : به عنصر هدینگ درون این کلاس استایل مورد نظر اعمال می شود
+                    title_content : برای استایل دادن مورد نظر به متن عنوان صفحه
                 --------------------------------------------------------------------- -->
-                <header class="header">
-                    <h1>
+                <header>
+                    <h1 class="title_content">
                         صفحه ثبت نام :
                     </h1>
                 </header>
@@ -78,6 +78,15 @@
                             -------------------------------------------------------------------------- -->
                             <input type="tel" id="reg_mob" maxlength="11" minlength="11" pattern="[0]{1}[0-9]{10}"
                             placeholder="*********09" required>
+
+                            <!-- ---------------------------------------------------------------------
+                            p : یک عنصر بلاک که پاراگراف را نشان می دهد پاراگراف‌ها می‌توانند 
+                            هر گروه‌بندی ساختاری محتوای مرتبط، مانند تصاویر یا فیلدهای فرم باشند
+
+                            msg : این کلاس استایل پیغام خطا را تعیین می کند
+                            که در صورت عدم بروز خطا وجود نخواهد داشت
+                            ----------------------------------------------------------------------- -->
+                            <p class="msg"></p>
                         </div>
                         <div class="row_input">
                             <label for="reg_pass">رمز عبور :</label>
@@ -87,38 +96,33 @@
                                 و اگر سایت امن نباشد به کاربر هشدار می دهد
                             --------------------------------------------------------------------------- -->
                             <input type="password" id="reg_pass" minlength="8" required>
-
-                            <!-- -----------------------------------------------------------------------------------------
-                                p : یک عنصر بلاک که پاراگراف را نشان می دهد
-                             پاراگراف‌ها می‌توانند هر گروه‌بندی ساختاری محتوای مرتبط، مانند تصاویر یا فیلدهای فرم باشند
-
-                                msg : این کلاس استایل پیغام خطا را تعیین می کند
-                                که در صورت عدم بروز خطا وجود نخواهد داشت
-                            ------------------------------------------------------------------------------------------ -->
-                            <p class="msg" id="p_reg_pass"></p>
+                            <p class="msg"></p>
                         </div>
+                        
                         <div class="row_input">
                             <label for="rpt_pass">تکرار رمز عبور :</label>
-                            <input type="password" id="rpt_pass">
-                            <p class="msg" id="p_rpt_pass"></p>
+                            <input type="password" id="rpt_pass" >
+                            <p class="msg"></p>
                         </div>
 
                         <!-- -----------------------------------
-                            btn :  را row_input محتوای کلاس  
+                            cnter :  را row_input محتوای کلاس  
                             بعنوان یک دکمه در وسط قرار می دهد
                         ------------------------------------ -->
-                        <div class="row_input btn">
+                        <div class="row_input cnter">
 
-                            <!-- ---------------------------------------------
-                                type submit : دکمه ای که فرم را ارسال می کند
+                            <!-- --------------------------------------------------------------------
+                                button : عنصری است که توسط کاربر با ماوس، صفحه کلید و ... اقدامی 
+                                   مانندارسال یک فرم یا باز کردن یک گفتگو را انجام می دهد
 
                                 in_btn : استایل دکمه را تعیین می کند
-                            ---------------------------------------------- -->
-                            <input type="submit" class="in_btn" value="ثبت نام">
+                            ---------------------------------------------------------------------- -->
+                            <button type="button" id="btnReg" class="in_btn">
+                                ثبت نام</button>
                             <p class="msg"></p>
                         </div>
                     </form>
-                    <div class="row_input btn">
+                    <div class="row_input cnter">
 
                         <!-- --------------------------------------------------------------------------------
                             a : این عنصر یک پیوند به صفحات وب، فایل‌ها، آدرس‌های ایمیل و غیره ایجاد می کند
@@ -134,7 +138,46 @@
     </div><!-- end of container -->
 
     <script>
-        
+        const telFormat = /^[0,9]{2}\d{9}/
+        const passFormat = /.{8,}/
+        const regMob = document.getElementById('reg_mob')
+        const regPass = document.getElementById('reg_pass')
+        const rptPass = document.getElementById('rpt_pass')
+        const btnReg = document.getElementById('btnReg')
+
+        regPass.onfocus = e => {
+            rptPass.value = ''
+        }
+
+        btnReg.addEventListener('click', e => {
+            let val1 = regMob.value.match(telFormat)
+            let val2 = regPass.value.match(passFormat)
+            let val3 = rptPass.value.match(val2)
+            if(val1){
+                regMob.classList.remove('error')
+                regMob.nextElementSibling.textContent = ''
+                if(val2){
+                    regPass.classList.remove('error')
+                    regPass.nextElementSibling.textContent = ''
+                    if(val3){
+                        rptPass.classList.remove('error')
+                        rptPass.nextElementSibling.textContent = ''
+                        alert('ok')
+                    } else {
+                        rptPass.classList.add('error')
+                        rptPass.nextElementSibling.textContent = 'پسورد مطابقت ندارد!'
+                    }
+                } else {
+                    regPass.classList.add('error')
+                    regPass.nextElementSibling.textContent = 'پسورد باید حداقل 8 کاراکتر باشد!'  
+                }
+            } else {
+                regMob.classList.add('error')
+                regMob.nextElementSibling.textContent = 'شماره موبایل معتبر نیست!'
+            }
+        })
     </script>
+
+    <script src="farawin.js"></script>
 </body>
 </html>

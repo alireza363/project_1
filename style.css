@@ -13,12 +13,14 @@ a {
     text-decoration: none;
 }
 
-input {
+input,
+button {
     font-family: inherit;
     font-size: inherit;
 }
 
-input[type=submit] {
+input[type=submit],
+button {
     cursor: pointer;
 }
 
@@ -55,7 +57,7 @@ body {
     padding-top: 15vh;
 }
 
-header.header h1 {
+.title_content {
     width: 35em;
     font-size: 1.5em;
     font-weight: bold;
@@ -63,6 +65,9 @@ header.header h1 {
     padding-right: 25px;
 }
 
+.disnone {
+    display: none;
+}
 /*
 **
  login & register pages styles 
@@ -72,7 +77,7 @@ header.header h1 {
     min-width: 280px;
     max-width: 400px;
     margin: 0 auto;
-    border: 1px solid #000;
+    border: 1px solid #8a8a8a;
     border-radius: 18px;
     background-color: rgb(217, 234, 211);
     padding: 30px 40px 10px;
@@ -90,7 +95,8 @@ header.header h1 {
     margin-bottom: 2px;
 }
 
-.row_input input {
+.row_input input,
+.row_input button {
     width: 100%;
     padding: 4px 12px;
     border: 1px solid #000;
@@ -99,16 +105,23 @@ header.header h1 {
     margin-top: 2px;
 }
 
-.row_input.btn {
+.row_input input.success {
+    border-color: #39c039;
+    box-shadow: 0 0 3px inset #39c039;
+}
+
+.row_input input.error {
+    border-color: red;
+    box-shadow: 0 0 2px inset red;
+}
+
+.row_input.cnter {
     text-align: center;
 }
 
-input.in_btn {
+input.in_btn,
+button.in_btn {
     margin-top: 20px;
-}
-
-.row_input a {
-    color: royalblue;
 }
 
 .in_btn {
@@ -117,7 +130,7 @@ input.in_btn {
     transition: 200ms;
 }
 
-.in_btn:hover {
+.in_btn.enabled:hover {
     background-color: green;
 }
 
@@ -128,6 +141,10 @@ p.msg {
     bottom: -17px;
     right: 10px;
     margin: 0;
+}
+
+.row_input a {
+    color: royalblue;
 }
 
 /*
@@ -312,9 +329,9 @@ i.fa:hover {
 **
 add user page style
  */
- .adduser,
- .edituser {
-     background-color: #fff;
+ #popupBox,
+ #edituser {
+     background-color: #121212f0;
      position: fixed;
      inset: 0;
      /* top: 0;
@@ -326,20 +343,20 @@ add user page style
      align-items: center;
  }
 
- /* .adduser {
-    display: flex;
- } */
- 
- /* .edituser {
-     display: flex;
- } */
- 
- .box_form.w20 {
-     width: 20%;
- }
- 
- .box_form.p40 {
-     padding: 40px;
+ .box_form.popUp {
+    width: 20%;
+    padding: 40px;
+    box-shadow: 0 0 4px #808080;
+}
+
+.box_form.popUp {
+    width: 20%;
+    padding: 40px;
+}
+
+ .popUp {
+    transform: scale(1);
+    transition: all 2s;
  }
  
  i.close {
@@ -348,16 +365,3 @@ add user page style
      top: 15px;
      font-size: 1.2em
  }
-
- /* 
- **
-
- */
- input.success {
-    border-color: #09c372;
-    outline: none;
-}
-
-input.error {
-    border-color: #f2070e;
-}
